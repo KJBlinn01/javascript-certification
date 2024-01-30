@@ -1,0 +1,36 @@
+<html>
+    <head><title>JavaScript Objects</title></head>
+    <body>
+        <h1>Creating JavaScript Objects</h1>
+        <p id = "demo"></p>
+    <script>
+        // Create an object using a literal
+        var student = {
+            name: "Chris",
+            age: 21,
+            studies: "Computer Science",
+        };
+        document.getElementById("demo").innerHTML = student.name + " of the age " + student.age + " studies " + student.studies;
+    </script>
+
+    <script>
+        // Create an object with the keyword new
+        var student = new Object();
+        student.name = "Chris",
+        student.age = 21,
+        student.studies = "Computer Science";
+        document.getElementById("demo").innerHTML = student.name + " of the age " + student.age + " studies " + student.studies;
+    </script>
+
+    <script>
+        // Create an object using an Object Constructor
+        function stud(name, age, studies){
+            this.name = name;
+            this.age = age;
+            this.studies = studies;
+        }
+        var student = stud("Chris", 21, "Computer Science");
+        document.getElementById("demo").innerHTML = student.name + " of the age " + student.age + " studies " + student.studies;
+    </script>
+    </body>
+</html>

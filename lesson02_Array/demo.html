@@ -1,0 +1,86 @@
+<html>
+    <head>JavaScript tutorial</head>
+    <body>
+        <p id = "demo"></p>
+    </body>
+    <script>
+    // Section 1: Array Operations
+        // Part 01: Creating an Array 
+        let cars = ["bmw", "volvo", "Honda"];
+        document.getElementById("demo").innerHTML = cars;
+
+        // Part 02: Accessing the Array
+        let bmw = cars[0];
+        document.getElementById("demo").innerHTML = bmw;
+
+        // Part 03: Array Length Property
+        let len = cars.length;
+        document.getElementById("demo").innerHTML = len;
+
+        // Part 04: Access Last Array Item
+        let last = cars[cars.length - 1];
+        document.getElementById("demo").innerHTML = last;
+        
+        // Part 05: Loop Over an Array Item
+        cars.forEach((item ,index, array) => {console.log(item, index);});
+
+    // Section 2: Array Methods
+        // Part 01: toString() - Converts an array to string
+        document.getElementById("demo").innerHTML = cars.toString();
+
+        // Part 02: pop() - removes the last element from the array
+        let last1 = cars.pop();
+        document.getElementById("demo").innerHTML = last1;
+        let last2 = cars[cars.length - 1];
+        console.log(last2);
+
+        // Part 03: push() - adds new element to the end of array
+        cars.push("Audi");
+        document.getElementById("demo").innerHTML = cars;
+
+        // Part 04: shift() - remove the first element from the array
+        cars.shift();
+        document.getElementById("demo").innerHTML = cars;
+
+        // Part 05: unshift() - adds an element at the beginning of the array
+        cars.unshift("Hyundai");
+        document.getElementById("demo").innerHTML = cars;
+
+        // Part 06: concat() - create a new array by merging existing arrays
+        let bikes = ["yamaha", "suzuki", "royal enfield"];
+        let vehicles = cars.concat(bikes);
+        document.getElementById("demo").innerHTML = vehicles;
+
+        // Part 07: sort() - sort an array in ascending order
+        vehicles.sort();
+        document.getElementById("demo").innerHTML = vehicles;
+
+        // Part 08: reverse() - reverse the elements of an array
+        vehicles.reverse();
+        document.getElementById("demo").innerHTML = vehicles;
+
+    // Section 3: Map, Filter and Reduce
+        // Part 01: map() - creates a new array and performs a function on each element of array
+        let num1 = [2, 3, 4, 5, 6, 7];
+        let num2 = num1.map(multiply);
+        function multiply(value){
+            return value * 2;
+        }
+        document.getElementById("demo").innerHTML = num2;
+
+        // Part 02: filter() - takes each element and applies a conditional statement against it
+        let num3 = num1.filter(comp);
+        function comp(value){
+            return value > 4;
+        }
+        document.getElementById("demo").innerHTML = num3;
+
+        // Part 03: reduce() - reduces an array of values down to just one value using a function
+        let num4 = num1.reduce(sum);
+        function sum(total, value){
+            return total + value;
+        }
+        document.getElementById("demo").innerHTML = num4;
+        
+    </script>
+</html>
